@@ -1,0 +1,21 @@
+{
+  "gulp":{
+    "sassLoaderspath":"./ayi/src",
+    "path": "/../cgi/ayi/public/asset/"
+  },
+  "entry": {
+    "app": [
+      "./ayi/src/ayicenter.index.js"
+    ]
+  },
+  "output": {
+    "path":"/../asset/",
+    "publicPath": "/asset/",
+    "filename": "js/[name].bundle.js",
+    "chunkFilename": "js/[name].bundle.js"
+  },
+  "HtmlWebpackPlugin": {
+    "filename": "../../application/views/ayi/ayiCenter.php",
+    "template": "./ayi/src/index.html"
+  }
+}
