@@ -1,0 +1,27 @@
+{
+  "name": "redux-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.7.2",
+    "tsconfig-lint": "^0.2.0",
+    "tslint": "^3.2.0",
+    "tslint-loader": "^2.1.0",
+    "typescript": "^1.7.3",
+    "typings": "^0.3.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-typescript": "^0.5.6"
+  }
+}
