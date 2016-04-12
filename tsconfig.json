@@ -1,17 +1,27 @@
 {
     "compilerOptions": {
-        "jsx": "react",
-        "outDir": "./dist",
-        "sourceMap": true,
-        "noImplicitAny": true,
+        "target": "es6",
         "module": "commonjs",
-        "target": "es5"
+        "moduleResolution": "node",
+        "outDir": "./tsbuild",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "typings/browser",
+        "typings/browser.d.ts"
     ],
-    "files": [
-        "./typings/main.d.ts",
-        "./src/index.tsx"
-    ]
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
 }
