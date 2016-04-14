@@ -4,3 +4,13 @@ hot reload 出现问题应该是ambient 需要做一个webpack.hot.d.ts来做映
 
 typings 必须生成对应的d.ts
 typings install --ambient
+
+
+webpack
+ExtractTextPlugin用来生成外部文件,主要是css,需要使用同一个生成,new多个则不起作用
+
+由于目录结构不同,要注意__dirname和process.cwd()的使用,否则路径不对
+
+CommonsChunkPlugin不需要在entry里设置,并且在html里引用,多个chunk需要new 多个CommonsChunkPlugin
+此处有个坑,CommonsChunkPlugin更多的是项目内某些文件的合并,并不能找到nodemodules下的文件
+PathChunkPlugin才是合并压缩nodemodules下类库的插件

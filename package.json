@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "nodemon": "nodemon server.js",
+    "http": " npm run build && http-server -o ",
     "build": "webpack --config webpack/webpack.config.js"
   },
   "author": "",
@@ -41,6 +42,7 @@
     "html-webpack-plugin": "^1.5.2",
     "node-sass": "^3.3.2",
     "null-loader": "^0.1.1",
+    "path-chunk-webpack-plugin": "^1.2.0",
     "postcss-loader": "^0.4.4",
     "raw-loader": "^0.5.1",
     "sass-loader": "^2.0.1",

@@ -3,12 +3,14 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer-core');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var PathChunkPlugin = require('path-chunk-webpack-plugin');
 var path = require("path");
 var entry = require("./entry");
 
-var hotMiddleware=[
-    'webpack-hot-middleware/client'
-];
+var hotMiddleware={
+    hotmid:'webpack-hot-middleware/client'
+};
+var extractSASS = new ExtractTextPlugin('[name].css');
 var loaders=[
     {
         test: /\.tsx?$/,
@@ -25,7 +27,7 @@ var loaders=[
     },
     {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader",[
+        loader: extractSASS.extract("style-loader",[
             "css-loader",
             "autoprefixer-loader?browsers=last 2 version",
             "sass-loader?outputStyle=expanded&includePaths[]=" + path.resolve(__dirname, './src/')
@@ -35,15 +37,30 @@ var loaders=[
 var plugins=[
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].[hash].css', {
-        disable: true
+    extractSASS,
+    //new webpack.optimize.CommonsChunkPlugin({
+    //    name: "vendor",
+    //    //filename: ["vendor"],
+    //    chunks: ["vendor"]
+    //})
+
+    new PathChunkPlugin({
+        name: 'vendor',
+        test: 'node_modules/'
     })
 ];
 module.exports = function(env) {
     var outpath=process.cwd();
     if(env=== "production"){
-        hotMiddleware=[];
+        hotMiddleware={};
         outpath=process.cwd();
+        plugins.push(
+            //new webpack.optimize.UglifyJsPlugin({
+            //    compress: {
+            //        warnings: false
+            //    }
+            //})
+        );
     }else{
         plugins.push(
             new webpack.DefinePlugin({
@@ -51,16 +68,17 @@ module.exports = function(env) {
             }));
         outpath=__dirname;
     }
-    console.log(outpath);
+    console.log(entry);
+    console.log(Object.assign(hotMiddleware,entry));
     return {
         devtool: 'sourcemap',
         debug: true,
-        entry: hotMiddleware.concat(entry),
+        entry: Object.assign(hotMiddleware,entry),
         module: {
             loaders: loaders
         },
         output: {
-            filename: 'bundle.js',
+            filename: '[name].js',
             path: outpath + "/static/",
             publicPath: "/static/",
             include: outpath,
@@ -68,8 +86,14 @@ module.exports = function(env) {
         },
         plugins:plugins ,
         resolve: {
-            extensions: ['', '.jsx', '.js', '.tsx', '.ts']
-        }
+            extensions: ['', '.jsx', '.js', '.tsx', '.ts'],
+            //alias:{
+            //    'vendor':'vendor.js'
+            //}
+        },
+        //externals:{
+        //    'react':'React'
+        //}
     };
 
 }
