@@ -5,6 +5,12 @@ hot reload 出现问题应该是ambient 需要做一个webpack.hot.d.ts来做映
 typings 必须生成对应的d.ts
 typings install --ambient
 
+增加react-router,ts需要
+typings install react-router --save.
+history有多个依赖,来源不一致,需要在github上获取到,当发生类似以下错误时
+An export assignment cannot be used in a module with other exported elements.
+注释掉相关的重复module
+
 
 webpack
 ExtractTextPlugin用来生成外部文件,主要是css,需要使用同一个生成,new多个则不起作用

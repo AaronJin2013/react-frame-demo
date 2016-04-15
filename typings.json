@@ -3,12 +3,14 @@
     "classnames": "registry:dt/classnames#0.0.0+20150923160543",
     "express": "registry:dt/express#4.0.0+20160218233549",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160218233549",
+    "history": "registry:dt/history#1.8.0+20160316155526",
     "mime": "registry:dt/mime#0.0.0+20151204023458",
     "node": "registry:dt/node#4.0.0+20160311162451",
     "react": "registry:dt/react#0.14.0+20160314090524",
     "react-addons-css-transition-group": "registry:dt/react-addons-css-transition-group#0.14.0+20151118193746",
     "react-addons-transition-group": "registry:dt/react-addons-transition-group#0.14.0+20160106161637",
     "react-dom": "registry:dt/react-dom#0.14.0+20160314090524",
+    "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160316155526",
     "redux": "registry:dt/redux#1.0.0+20160201195450",
     "redux-actions": "registry:dt/redux-actions#0.8.0+20150915051529",
     "redux-logger": "registry:dt/redux-logger#2.6.0+20160226185156",
@@ -20,6 +22,8 @@
     "webpack": "registry:dt/webpack#1.12.9+20160125043835"
   },
   "dependencies": {
-    "react-redux": "registry:npm/react-redux#4.4.0+20160207114942"
+    "history": "registry:npm/history#2.0.0+20160406171533",
+    "react-redux": "registry:npm/react-redux#4.4.0+20160207114942",
+    "react-router": "registry:npm/react-router#2.0.0+20160214194820"
   }
 }

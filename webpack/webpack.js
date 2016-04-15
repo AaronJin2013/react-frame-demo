@@ -55,11 +55,11 @@ module.exports = function(env) {
         hotMiddleware={};
         outpath=process.cwd();
         plugins.push(
-            //new webpack.optimize.UglifyJsPlugin({
-            //    compress: {
-            //        warnings: false
-            //    }
-            //})
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false
+                }
+            })
         );
     }else{
         plugins.push(
