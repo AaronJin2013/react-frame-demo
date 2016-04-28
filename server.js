@@ -2,6 +2,8 @@
  * Created by aaronjin on 16/4/5.
  */
 var webpack = require('webpack')
+var  express = require('express');
+var path = require('path');
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack/webpack')("develop")
@@ -28,6 +30,7 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler, {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
+app.use(express.static(path.join(__dirname, '')));
 app.get("/", function(req, res) {
     res.sendFile(__dirname + '/index.html')
 })

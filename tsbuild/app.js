@@ -1,5 +1,10 @@
 var React = require('react');
 var react_dom_1 = require('react-dom');
+var History = require('history');
+var react_router_1 = require('react-router');
+var configureStore = require('./src/store/config');
+console.log(configureStore);
 var Hello_tsx_1 = require("./src/components/Hello.tsx");
-console.log('start again123');
+const browserHistory = react_router_1.useRouterHistory(History.createHistory)();
+console.log(browserHistory);
 react_dom_1.render(React.createElement(Hello_tsx_1.HelloComponent, {"compiler": "TypeScript", "framework": "React"}), document.getElementById("root"));

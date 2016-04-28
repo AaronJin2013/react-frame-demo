@@ -104,7 +104,7 @@ declare module 'history/history' {
 import main = require('~history/history');
 export = main;
 }
-declare module 'history' {
-import main = require('~history/history');
-export = main;
-}
+//declare module 'history' {
+//import main = require('~history/history');
+//export = main;
+//}

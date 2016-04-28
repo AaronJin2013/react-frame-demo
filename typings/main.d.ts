@@ -20,6 +20,7 @@
 /// <reference path="main/ambient/source-map/index.d.ts" />
 /// <reference path="main/ambient/uglify-js/index.d.ts" />
 /// <reference path="main/ambient/webpack/index.d.ts" />
+/// <reference path="main/ambient/whatwg-fetch/index.d.ts" />
 /// <reference path="main/definitions/history/index.d.ts" />
 /// <reference path="main/definitions/react-redux/index.d.ts" />
 /// <reference path="main/definitions/react-router/index.d.ts" />

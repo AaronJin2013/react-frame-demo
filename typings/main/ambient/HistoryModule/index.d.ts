@@ -131,103 +131,103 @@ declare namespace HistoryModule {
 
 }
 
-//
-//declare module "history/lib/createBrowserHistory" {
-//
-//    export default function createBrowserHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
-//
-//}
-//
-//
-//declare module "history/lib/createHashHistory" {
-//
-//    export default function createHashHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
-//
-//}
-//
-//
-//declare module "history/lib/createMemoryHistory" {
-//
-//    export default function createMemoryHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
-//
-//}
-//
-//
-//declare module "history/lib/createLocation" {
-//
-//    export default function createLocation(path?: HistoryModule.Path, state?: HistoryModule.LocationState, action?: HistoryModule.Action, key?: HistoryModule.LocationKey): HistoryModule.Location
-//
-//}
-//
-//
-//declare module "history/lib/useBasename" {
-//
-//    export default function useBasename<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T>
-//
-//}
-//
-//
-//declare module "history/lib/useBeforeUnload" {
-//
-//    export default function useBeforeUnload<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T & HistoryModule.HistoryBeforeUnload>
-//
-//}
-//
-//
-//declare module "history/lib/useQueries" {
-//
-//    export default function useQueries<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T & HistoryModule.HistoryQueries>
-//
-//}
-//
-//
-//declare module "history/lib/actions" {
-//
-//    export const PUSH: string
-//
-//    export const REPLACE: string
-//
-//    export const POP: string
-//
-//    export default {
-//        PUSH,
-//        REPLACE,
-//        POP
-//    }
-//
-//}
-//
-//declare module "history/lib/DOMUtils" {
-//    export function addEventListener(node: EventTarget, event: string, listener: EventListenerOrEventListenerObject): void;
-//    export function removeEventListener(node: EventTarget, event: string, listener: EventListenerOrEventListenerObject): void;
-//    export function getHashPath(): string;
-//    export function replaceHashPath(path: string): void;
-//    export function getWindowPath(): string;
-//    export function go(n: number): void;
-//    export function getUserConfirmation(message: string, callback: (result: boolean) => void): void;
-//    export function supportsHistory(): boolean;
-//    export function supportsGoWithoutReloadUsingHash(): boolean;
-//}
-//
-//
-//declare module "history" {
-//
-//    export { default as createHistory } from "history/lib/createBrowserHistory"
-//
-//    export { default as createHashHistory } from "history/lib/createHashHistory"
-//
-//    export { default as createMemoryHistory } from "history/lib/createMemoryHistory"
-//
-//    export { default as createLocation } from "history/lib/createLocation"
-//
-//    export { default as useBasename } from "history/lib/useBasename"
-//
-//    export { default as useBeforeUnload } from "history/lib/useBeforeUnload"
-//
-//    export { default as useQueries } from "history/lib/useQueries"
-//
-//    import * as Actions from "history/lib/actions"
-//
-//    export { Actions }
-//
-//}
+
+declare module "history/lib/createBrowserHistory" {
+
+    export default function createBrowserHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
+
+}
+
+
+declare module "history/lib/createHashHistory" {
+
+    export default function createHashHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
+
+}
+
+
+declare module "history/lib/createMemoryHistory" {
+
+    export default function createMemoryHistory(options?: HistoryModule.HistoryOptions): HistoryModule.History
+
+}
+
+
+declare module "history/lib/createLocation" {
+
+    export default function createLocation(path?: HistoryModule.Path, state?: HistoryModule.LocationState, action?: HistoryModule.Action, key?: HistoryModule.LocationKey): HistoryModule.Location
+
+}
+
+
+declare module "history/lib/useBasename" {
+
+    export default function useBasename<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T>
+
+}
+
+
+declare module "history/lib/useBeforeUnload" {
+
+    export default function useBeforeUnload<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T & HistoryModule.HistoryBeforeUnload>
+
+}
+
+
+declare module "history/lib/useQueries" {
+
+    export default function useQueries<T>(createHistory: HistoryModule.CreateHistory<T>): HistoryModule.CreateHistory<T & HistoryModule.HistoryQueries>
+
+}
+
+
+declare module "history/lib/actions" {
+
+    export const PUSH: string
+
+    export const REPLACE: string
+
+    export const POP: string
+
+    export default {
+        PUSH,
+        REPLACE,
+        POP
+    }
+
+}
+
+declare module "history/lib/DOMUtils" {
+    export function addEventListener(node: EventTarget, event: string, listener: EventListenerOrEventListenerObject): void;
+    export function removeEventListener(node: EventTarget, event: string, listener: EventListenerOrEventListenerObject): void;
+    export function getHashPath(): string;
+    export function replaceHashPath(path: string): void;
+    export function getWindowPath(): string;
+    export function go(n: number): void;
+    export function getUserConfirmation(message: string, callback: (result: boolean) => void): void;
+    export function supportsHistory(): boolean;
+    export function supportsGoWithoutReloadUsingHash(): boolean;
+}
+
+
+declare module "history" {
+
+    export { default as createHistory } from "history/lib/createBrowserHistory"
+
+    export { default as createHashHistory } from "history/lib/createHashHistory"
+
+    export { default as createMemoryHistory } from "history/lib/createMemoryHistory"
+
+    export { default as createLocation } from "history/lib/createLocation"
+
+    export { default as useBasename } from "history/lib/useBasename"
+
+    export { default as useBeforeUnload } from "history/lib/useBeforeUnload"
+
+    export { default as useQueries } from "history/lib/useQueries"
+
+    import * as Actions from "history/lib/actions"
+
+    export { Actions }
+
+}

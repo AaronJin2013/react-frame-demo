@@ -10,6 +10,7 @@ typings install react-router --save.
 history有多个依赖,来源不一致,需要在github上获取到,当发生类似以下错误时
 An export assignment cannot be used in a module with other exported elements.
 注释掉相关的重复module
+historyModule的用法和es6有相当大的不同
 
 
 webpack

@@ -13,7 +13,7 @@ var hotMiddleware={
 var extractSASS = new ExtractTextPlugin('[name].css');
 var loaders=[
     {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         loaders: ['babel-loader', 'ts-loader']
     },{
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
@@ -60,6 +60,9 @@ module.exports = function(env) {
                     warnings: false
                 }
             })
+        );
+        plugins.push(
+            new ExtractTextPlugin('css/[name].bundle.css', {})
         );
     }else{
         plugins.push(

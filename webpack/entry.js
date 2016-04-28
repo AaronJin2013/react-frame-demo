@@ -1,4 +1,4 @@
 module.exports = {
     //vendor:['react','react-dom','react-redux','redux'],
-    app:'./app.tsx'
+    app:'./src/redux_start/index.tsx'
 };
