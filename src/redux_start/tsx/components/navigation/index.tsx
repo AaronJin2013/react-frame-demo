@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link,IndexLink  } from 'react-router';
 
 export class Navigation extends React.Component<any, any> {
 
@@ -10,9 +10,9 @@ export class Navigation extends React.Component<any, any> {
             <div>
                 <header>
                     <ul>
-                        <li><Link to="/" activeClassName="active" activeStyle={{color: '#c00'}}>home</Link></li>
-                        <li><Link to="/hello" activeClassName="active" activeStyle={{color: '#c00'}}>hello</Link></li>
-                        <li><Link to="/again" activeClassName="active" activeStyle={{color: '#c00'}}>again</Link></li>
+                        <li><IndexLink  to="/" activeClassName="active" activeStyle={{color: '#c00'}}>home</IndexLink></li>
+                        <li><Link to="/user" activeClassName="active" activeStyle={{color: '#c00'}}>user</Link></li>
+                        <li><Link to="/shop" activeClassName="active" activeStyle={{color: '#c00'}}>shop</Link></li>
                     </ul>
                 </header>
                 {this.props.children}

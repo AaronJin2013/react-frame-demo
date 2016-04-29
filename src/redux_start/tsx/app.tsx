@@ -4,11 +4,10 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import { configStore } from './redux';
-import { HelloComponent,againComponent,homeComponent,Navigation } from './components';
+import * as Views from './views';
 
 
 const store = configStore();
-
 //
 //const store = createStore(appReducer, initialState);
 const history = syncHistoryWithStore(hashHistory, store);
@@ -18,11 +17,7 @@ export class App extends React.Component<any, any> {
         return (
             <Provider store={store}>
                 <Router history={history}>
-                    <Route path="/" component={Navigation}>
-                        <IndexRoute component={homeComponent} />
-                        <Route path="hello" component={HelloComponent} />
-                        <Route path="again" component={againComponent} />
-                    </Route>
+                    {Views.Routes(store)}
                 </Router>
             </Provider>
         );
