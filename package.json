@@ -49,6 +49,7 @@
     "path-chunk-webpack-plugin": "^1.2.0",
     "postcss-loader": "^0.4.4",
     "raw-loader": "^0.5.1",
+    "require": "^2.4.20",
     "retyped-react-router-redux-tsd-ambient": "^2.1.0-0",
     "retyped-whatwg-fetch-tsd-ambient": "0.0.0-0",
     "sass-loader": "^2.0.1",

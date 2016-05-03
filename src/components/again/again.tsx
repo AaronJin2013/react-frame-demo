@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 //import * as fetch from "fetch";
-import './again.scss';
+import {} from './again.scss';
 const fetch=window.fetch;
 
 export class againComponent extends React.Component<any, any> {

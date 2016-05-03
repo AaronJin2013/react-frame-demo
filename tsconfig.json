@@ -15,6 +15,7 @@
         "preserveConstEnums": true
     },
     "exclude": [
+        "./src/**/*.ts",
         "node_modules",
         "typings/browser",
         "typings/browser.d.ts"

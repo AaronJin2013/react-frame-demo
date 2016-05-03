@@ -1,17 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 //import * as fetch from "fetch";
-const fetch=window.fetch;
+const fetch = window.fetch;
 
-export class View extends React.Component<any, any> {
+class View extends React.Component<any, any> {
 
     componentDidMount() {
 
         fetch('/json/data.json')
-            .then(function(response) {
+            .then(function (response) {
                 //console.log(response.headers.get('Content-Type'))
                 //console.log(response.headers.get('Date'))
-                console.log(response.status)
+                //console.log(response.status)
                 //console.log(response.statusText)
             });
 
@@ -19,7 +19,9 @@ export class View extends React.Component<any, any> {
 
     render() {
         return <h1 className="b">
-            home in views
+            Shop ensure in views
         </h1>;
     }
-}
+};
+
+module.exports= View;

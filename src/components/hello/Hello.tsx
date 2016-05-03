@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 //import * as fetch from "fetch";
-import './Hello.scss';
+import {} from './Hello.scss';
 const fetch=window.fetch;
 
 export class HelloComponent extends React.Component<any, any> {

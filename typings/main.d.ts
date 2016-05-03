@@ -24,3 +24,4 @@
 /// <reference path="main/definitions/history/index.d.ts" />
 /// <reference path="main/definitions/react-redux/index.d.ts" />
 /// <reference path="main/definitions/react-router/index.d.ts" />
+/// <reference path="main/ambient/ct/custom-typings.d.ts" />

@@ -21,3 +21,9 @@ ExtractTextPlugin用来生成外部文件,主要是css,需要使用同一个生�
 CommonsChunkPlugin不需要在entry里设置,并且在html里引用,多个chunk需要new 多个CommonsChunkPlugin
 此处有个坑,CommonsChunkPlugin更多的是项目内某些文件的合并,并不能找到nodemodules下的文件
 PathChunkPlugin才是合并压缩nodemodules下类库的插件
+
+
+TS的检测机制使得require.ensure不能正常执行,因此我们需要添加d.ts作为获取的方式
+interface NodeRequire {
+    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void, name:string) => void;
+}

@@ -38,11 +38,11 @@ var plugins=[
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     extractSASS,
+    //
     //new webpack.optimize.CommonsChunkPlugin({
-    //    name: "vendor",
-    //    //filename: ["vendor"],
-    //    chunks: ["vendor"]
-    //})
+    //    name: "chunks"
+    //}),
+
 
     new PathChunkPlugin({
         name: 'vendor',
@@ -85,7 +85,7 @@ module.exports = function(env) {
             path: outpath + "/static/",
             publicPath: "/static/",
             include: outpath,
-            chunkFilename: 'js/[hash].chunk.js'
+            chunkFilename: 'chunk/[name].chunk.js'
         },
         plugins:plugins ,
         resolve: {

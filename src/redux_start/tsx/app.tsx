@@ -18,8 +18,7 @@ export class App extends React.Component<any, any> {
     render() {
         return (
             <Provider store={store}>
-                <Router history={history}>
-                    {Views.Routes(store)}
+                <Router history={history}  routes={Views.Routes}>
                 </Router>
             </Provider>
         );
