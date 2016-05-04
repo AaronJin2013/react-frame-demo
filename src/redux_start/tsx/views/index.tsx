@@ -9,13 +9,14 @@ import * as Components from '../components';
 
 
 export const Routes = [
-                { path: '/',
-                        component: Layout.View,
-                        indexRoute: { component: Home.View },
-                        childRoutes: [
-                                { path: 'user', component: User.View },
-                                Shop.Routes
-                        ],
-                }
-        ];
+    {
+        path: '/',
+        component: Layout.View,
+        indexRoute: {component: Home.View},
+        childRoutes: [
+            {path: 'user', component: User.View},
+            Shop.Routes()
+        ],
+    }
+];
 // {Views.Routes(store)}
