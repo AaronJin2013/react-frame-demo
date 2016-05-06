@@ -38,16 +38,38 @@ var plugins=[
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     extractSASS,
-    //
-    //new webpack.optimize.CommonsChunkPlugin({
-    //    name: "chunks"
-    //}),
 
+    //兼容windows的写法,可以new多个来打包不同的内容
+    new webpack.optimize.CommonsChunkPlugin({
+        name:'vendor',
+        filename:'vendor.js',
+        minChunks:function(module,count){
+            //引用测试大于某个次数,保持默认行为，如果你的模块特别多，适当提高
+            //if(count>=1){
+            //    return true;
+            //}
 
-    new PathChunkPlugin({
-        name: 'vendor',
-        test: 'node_modules/'
-    })
+            //符合某种格式，return ture
+            var resourceName = module.resource
+            //if(resourceName){
+            //    resourceName = resourceName.substring(resourceName.lastIndexOf(path.sep)+1)
+            //}
+            var reg = /node_modules/
+            if(reg.test(resourceName)){
+                return true;
+            }
+
+            //符合某种格式，return false;
+
+            return false;
+        }
+    }),
+
+    //备选方案,写法简单,不兼容windows,不可多次使用
+    //new PathChunkPlugin({
+    //    name: 'vendor',
+    //    test: 'node_modules/'
+    //})
 ];
 module.exports = function(env) {
     var outpath=process.cwd();

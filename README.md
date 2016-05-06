@@ -19,8 +19,12 @@ ExtractTextPlugin用来生成外部文件,主要是css,需要使用同一个生�
 由于目录结构不同,要注意__dirname和process.cwd()的使用,否则路径不对
 
 CommonsChunkPlugin不需要在entry里设置,并且在html里引用,多个chunk需要new 多个CommonsChunkPlugin
-此处有个坑,CommonsChunkPlugin更多的是项目内某些文件的合并,并不能找到nodemodules下的文件
+已填坑,CommonsChunkPlugin可以正则以及按加载次数进行合并,标准流程使用该模式,无副作用
+
+
+备用方案:
 PathChunkPlugin才是合并压缩nodemodules下类库的插件
+windows下会出现css解析错误,多次调用mac下也出现了类似错误
 
 
 TS的检测机制使得require.ensure不能正常执行,因此我们需要添加d.ts作为获取的方式

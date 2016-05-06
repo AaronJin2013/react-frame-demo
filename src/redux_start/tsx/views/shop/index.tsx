@@ -22,7 +22,7 @@ export function Routes() {
                     require('./view')['Detail'],
                     require('./goods')['Routes'](),
                 ])
-            },'shop')
+            },'shop.goods')
         },
     };
 }
