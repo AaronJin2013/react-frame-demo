@@ -14,6 +14,7 @@ var extractSASS = new ExtractTextPlugin('[name].css');
 var loaders=[
     {
         test: /\.(ts|tsx)?$/,
+        exclude: /node_modules/,
         loaders: ['babel-loader', 'ts-loader']
     },{
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,

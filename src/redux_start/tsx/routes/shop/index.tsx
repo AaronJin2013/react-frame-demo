@@ -1,4 +1,4 @@
-export function Routes() {
+export function route() {
     return  {
         path: 'shop',
         //component:require.ensure([], function (require) {
@@ -20,7 +20,7 @@ export function Routes() {
                 callback(null, [
                     require('./view')['List'],
                     require('./view')['Detail'],
-                    require('./goods')['Routes'](),
+                    require('./goods')['route'](),
                 ])
             },'shop.goods')
         },

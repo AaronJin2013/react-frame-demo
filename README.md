@@ -31,3 +31,14 @@ TS的检测机制使得require.ensure不能正常执行,因此我们需要添加
 interface NodeRequire {
     ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void, name:string) => void;
 }
+
+
+redux的debug模式需要devToolsExtension和module.hot,具体写法参照configureStore
+
+fetchbody只支持字符串,所以要提交json或文件,需要做相应转换
+var data = new FormData();
+data.append( "json", JSON.stringify( {
+    startDateIndex:startDateIndex
+} ) );
+data.append('type', 'file');
+data.append('image', blob);

@@ -1,0 +1,16 @@
+[{
+  "id":1,
+  "name":"shopname",
+  "address":"shopaddress",
+  "telephone":"18383828393"
+},{
+  "id":2,
+  "name":"shopname2",
+  "address":"shopaddress2",
+  "telephone":"18283828393"
+},{
+  "id":3,
+  "name":"shopname3",
+  "address":"shopaddress3",
+  "telephone":"18383828333"
+}]

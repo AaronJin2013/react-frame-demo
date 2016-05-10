@@ -14,7 +14,7 @@ class GoodsView extends React.Component<any, any> {
     }
 };
 
-export function Routes() {
+export function route() {
     return  {
         path: 'goods',
         component:GoodsView

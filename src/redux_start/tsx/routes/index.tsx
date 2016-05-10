@@ -8,14 +8,14 @@ import * as Shop from './shop'
 import * as Components from '../components';
 
 
-export const Routes = [
+export const route = [
     {
         path: '/',
         component: Layout.View,
         indexRoute: {component: Home.View},
         childRoutes: [
             {path: 'user', component: User.View},
-            Shop.Routes()
+            Shop.route()
         ],
     }
 ];

@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "domain-task": "^1.0.1",
     "history": "^2.0.0",
     "react": "^0.14.8",
     "react-addons-css-transition-group": "^0.14.7",
@@ -25,6 +26,7 @@
     "redux": "^3.2.1",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.0.1",
+    "redux-typed": "^1.0.0",
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {

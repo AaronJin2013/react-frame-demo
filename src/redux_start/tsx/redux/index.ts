@@ -1,24 +1,10 @@
-import { createStore as createReduxStore, applyMiddleware } from "redux";
+import { createStore as createReduxStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import * as createLogger from "redux-logger";
-import { Reducers } from "./reducers";
-
-const createStore = applyMiddleware(thunk, createLogger({ collapsed: true }))(createReduxStore);
-    // applyMiddleware(thunk)(createReduxStore);
+import { ApplicationState }  from './store';
+import configureStore from './configureStore';
 
 
+const initialState = (window as any).initialReduxState as ApplicationState;
+export const Store = configureStore(initialState);
 
-export function configStore() {
-
-    const store = createStore(Reducers);
-
-    // hot reloading
-    if (typeof module !== "undefined" && module.hot) {
-        module.hot.accept("./reducers", () => {
-            const nextRootReducer = require('./reducers');
-            store.replaceReducer(nextRootReducer);
-        });
-    }
-
-    return store;
-}
