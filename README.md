@@ -32,6 +32,8 @@ interface NodeRequire {
     ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void, name:string) => void;
 }
 
+domain-task/fetch可以替代whatwg-fetch,并且不需要自己编写d.ts
+
 
 redux的debug模式需要devToolsExtension和module.hot,具体写法参照configureStore
 

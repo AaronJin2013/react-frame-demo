@@ -1,0 +1,45 @@
+interface deals{
+    id:string;
+    description:string;
+    url:string;
+};
+
+export interface Shop {
+    avg_price:number;
+    review_count:number;
+    review_list_url:string[];
+    distance:number;
+    business_url:string;
+    photo_url:string;
+    s_photo_url:string;
+    photo_count:number;
+    photo_list_url:string[];
+    has_coupon:number;
+    coupon_id:number;
+    coupon_description:string;
+    coupon_url:string;
+    has_deal:number;
+    deal_count:number;
+    deals:deals[];
+    has_online_reservation:number;
+    online_reservation_url:string;
+    business_id:number;
+    name:string;
+    branch_name:string;
+    address:string;
+    telephone:string;
+    city:string;
+    regions:string[];
+    categories:string[];
+    latitude:number;
+    longitude:number;
+    avg_rating:number;
+    rating_img_url:string;
+    rating_s_img_url:string;
+    product_grade:number;
+    decoration_grade:number;
+    service_grade:number;
+    product_score:number;
+    decoration_score:number;
+    service_score:number;
+}

@@ -48,7 +48,7 @@ module otherHistory {
 
 	type Href = string;
 
-	interface Location{
+	interface Location {
 		pathname?: Pathname;
 		search?: Search;
 		query?: Query;
@@ -57,7 +57,7 @@ module otherHistory {
 		key?: LocationKey;
 	}
 
-	interface LocationDescriptorObject{
+	interface LocationDescriptorObject {
 		pathname?: Pathname;
 		search?: Search;
 		query?: Query;
@@ -93,9 +93,8 @@ module otherHistory {
 	export function useBeforeUnload<TArguments, TResult extends History>(createHistory: CreateHistory<TArguments, TResult>): CreateHistory<TArguments, TResult & BeforeUnload>;
 
 	export function useQueries<TArguments, TResult extends History>(createHistory: CreateHistory<TArguments, TResult>): CreateHistory<TArguments & QueryOptions, TResult>;
-	
-	export function useBasename<TArguments, TResult extends History>(createHistory: CreateHistory<TArguments, TResult>): CreateHistory<TArguments & BasenameOptions, TResult>;
 
+	export function useBasename<TArguments, TResult extends History>(createHistory: CreateHistory<TArguments, TResult>): CreateHistory<TArguments & BasenameOptions, TResult>;
 }
 
 export = otherHistory;

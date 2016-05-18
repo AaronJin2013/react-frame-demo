@@ -94,8 +94,6 @@ module.exports = function(env) {
             }));
         outpath=__dirname;
     }
-    console.log(entry);
-    console.log(Object.assign(hotMiddleware,entry));
     return {
         devtool: 'sourcemap',
         debug: true,
