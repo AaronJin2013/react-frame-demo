@@ -1,2 +1,5 @@
-export * from "./User";
-export { Shop } from "./Shop";
+import * as User from "./User";
+import * as Shop from "./Shop";
+
+
+export { User,Shop};

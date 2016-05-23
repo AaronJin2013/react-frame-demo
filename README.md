@@ -44,3 +44,11 @@ data.append( "json", JSON.stringify( {
 } ) );
 data.append('type', 'file');
 data.append('image', blob);
+
+
+
+export 因为牵涉到interface,对象必须有类型,否则会报错
+无法直接给import的对象类型,因此如果想在import对象外包个对象需要使用以下方式
+import * as User from "./User";
+export { User };
+使用这个方式是为了统一models中的Interface和Schema,使之可以循环

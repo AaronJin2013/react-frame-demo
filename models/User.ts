@@ -1,11 +1,11 @@
-export interface IUser {
-    UUID:number;
+export interface Interface {
+    UUID:string;
     department:string;
     mobile:string;
     name: string;
 }
 
-export const SUser = {
+export const Schema = {
     UUID: String,
     department: String,
     mobile: String,

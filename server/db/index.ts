@@ -1,24 +1,21 @@
 import * as mongoose from 'mongoose';
-//import * as uuid from 'node-uuid';
+import * as uuid from 'node-uuid';
 import * as models from '../../models';
-interface IUserModel extends models.IUser, mongoose.Document { }
-const db='mongodb://localhost/redux';
-let connect =()=>{
-    let options = { server: { socketOptions: { keepAlive: 1 } } };
+const db = 'mongodb://localhost/redux';
+var connect = ()=> {
+    let options = {server: {socketOptions: {keepAlive: 1}}};
     mongoose.connect(db, options);
 };
 connect();
 
-var userSchema = new mongoose.Schema(models.SUser);
-
-
 mongoose.connection.on('error', console.log);
 mongoose.connection.on('disconnected', connect);
+
+export interface IUserModel extends models.User.Interface, mongoose.Document {}
+var userSchema = new mongoose.Schema(models.User.Schema);
 export const User = mongoose.model<IUserModel>("User", userSchema);
 
-//var user = new User({UUID:uuid.v4(),department: "技术部",mobile:"18964929189",name:"金鑫"});
-//user.save();
+export interface IShopModel extends models.Shop.Interface, mongoose.Document {}
+var ShopSchema = new mongoose.Schema(models.Shop.Schema);
+export const Shop = mongoose.model<IShopModel>("Shop", ShopSchema);
 
-//function doSthWithUser(user: IUser) { }
-//
-//doSthWithUser(user); // works!

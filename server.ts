@@ -11,7 +11,7 @@ import multer = require("multer");
 import errorhandler = require("errorhandler");
 import * as DB from './server/db' ;
 import * as uuid from 'node-uuid';
-
+import router from './server/routes';
 
 var config = require('./webpack/webpack.js')("develop");
 
@@ -38,7 +38,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '')));
 
-require('./server/routes')(app);
+app.use('/', router);
+console.log(router);
 
 var compiler = webpack(config);
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -59,6 +60,20 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler, {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
+app.use((req, res, next) => {
+    var err = new Error('Not Found');
+    err['status'] = 404;
+    next(err);
+});
+
+app.use((err: any, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({
+        message: err.message,
+        error: {}
+    });
+    return null;
+});
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
 });
