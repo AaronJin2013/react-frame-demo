@@ -1,8 +1,8 @@
 export interface Interface {
-    UUID:string;
-    department:string;
-    mobile:string;
-    name: string;
+    UUID:string,
+    department:string,
+    mobile:string,
+    name: string
 }
 
 export const Schema = {

@@ -1,36 +1,27 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-//import * as fetch from "fetch";
-const fetch=window.fetch;
+import { provide } from 'redux-typed';
+import { ApplicationState }  from '../../redux/store';
+import * as UsersState from '../../redux/store/user'
 
-export class View extends React.Component<any, any> {
+interface RouteParams {
+}
+class View extends React.Component<UsersProps, void> {
 
     componentDidMount() {
 
-        fetch('/json/data.json')
-            .then(function(response) {
-                //console.log(response.headers.get('Content-Type'))
-                //console.log(response.headers.get('Date'))
-                //console.log(response.status)
-                //console.log(response.statusText)
-            });
 
     }
 
-    render() {
+    public render() {
         return <h1 className="b">
             User in views
         </h1>;
     }
 }
-
-//
-//export function Routes(store) {
-//    return (
-//        <Route path="/" component={Layout.View}>
-//            <IndexRoute component={Home.View} />
-//            <Route path="user" component={User.View} />
-//            <Route path="shop" component={Shop.View} />
-//        </Route>
-//    );
-//}
+const provider = provide(
+    (state: ApplicationState) => state.users, // Select which part of global state maps to this component
+    UsersState.actionCreators                 // Select which action creators should be exposed to this component
+).withExternalProps<{ params: RouteParams }>();          // Also include a 'params' property on WeatherForecastProps
+type UsersProps = typeof provider.allProps;
+export default provider.connect(View);

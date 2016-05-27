@@ -4,7 +4,7 @@ import * as uuid from 'node-uuid';
 
 export module UsersController {
     export function indexAction(req, res, next) {
-        User.find(function(err, users) {
+        User.find((err, users) =>{
             if (err)
                 res.send(err);
             res.json({
@@ -20,7 +20,7 @@ export module UsersController {
         user.mobile=req.body.mobile;
         user.name=req.body.name;
         // save the bear and check for errors
-        user.save(function(err) {
+        user.save((err)=>{
             if (err)
                 res.send(err);
             res.json({
@@ -32,7 +32,7 @@ export module UsersController {
     export function itemAction(req, res, next) {
         //User.findById(req.params.id, function(err, user) {
         //});
-        User.findOne({ UUID: req.params.id }, function(err, user) {
+        User.findOne({ UUID: req.params.id }, (err, user) =>{
             if (err)
                 res.send(err);
             res.json({
@@ -43,7 +43,7 @@ export module UsersController {
     }
     export function updateAction(req, res, next) {
 
-        User.findOne({ UUID: req.params.id }, function(err, user) {
+        User.findOne({ UUID: req.params.id }, (err, user)=>{
             if (err)
                 res.send(err);
 
@@ -66,10 +66,10 @@ export module UsersController {
     }
     export function deleteAction(req, res, next) {
 
-        User.findOne({ UUID: req.params.id }, function(err, user) {
+        User.findOne({ UUID: req.params.id }, (err, user)=>{
             if (err)
                 res.send(err);
-            user.remove(function(err) {
+            user.remove((err)=>{
                 if (err)
                     res.send(err);
                 res.json({

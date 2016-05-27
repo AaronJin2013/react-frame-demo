@@ -12,6 +12,7 @@ import errorhandler = require("errorhandler");
 import * as DB from './server/db' ;
 import * as uuid from 'node-uuid';
 import router from './server/routes';
+import apirouter from './server/routes';
 
 var config = require('./webpack/webpack.js')("develop");
 
@@ -39,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '')));
 
 app.use('/', router);
+app.use('/api/', apirouter);
 console.log(router);
 
 var compiler = webpack(config);

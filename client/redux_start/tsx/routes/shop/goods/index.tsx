@@ -17,6 +17,6 @@ class GoodsView extends React.Component<any, any> {
 export function route() {
     return  {
         path: 'goods',
-        component:GoodsView
+        component:{body:GoodsView}
     };
 }

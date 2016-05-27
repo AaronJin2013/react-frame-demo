@@ -1,7 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Router, Route, Link,IndexLink  } from 'react-router';
+import { provide } from 'redux-typed';
+import { ApplicationState }  from '../../redux/store';
+import * as Shop  from '../../redux/store/shop';
 
+
+interface RouteParams {
+    startDateIndex: string;
+}
 
 export class View extends React.Component<any, any> {
 
@@ -21,7 +28,7 @@ export class View extends React.Component<any, any> {
                     </li>
                 </ul>
             </header>
-            {this.props.children}
+            {this.props.body}
         </div>;
     }
 }
@@ -40,10 +47,10 @@ class IndexView extends React.Component<any, any> {
 };
 
 export const Index ={
-    component: IndexView
+    component: {body:IndexView}
 };
 
-class ListView extends React.Component<any, any> {
+class ListView extends React.Component<ShopProps, any> {
 
     render() {
         return<div>
@@ -62,13 +69,19 @@ class ListView extends React.Component<any, any> {
                 </ul>
             </header>
             {this.props.children}
-        </div>;;
+        </div>;
     }
 };
 
+const provider = provide(
+    (state: ApplicationState) => state.shops, // Select which part of global state maps to this component
+    Shop.actionCreators                 // Select which action creators should be exposed to this component
+).withExternalProps<{ params: RouteParams }>();          // Also include a 'params' property on WeatherForecastProps
+type ShopProps = typeof provider.allProps;
+
 export const List ={
     path: 'list',
-    component: ListView
+    component: {body:ListView}
 };
 
 class DetailView extends React.Component<any, any> {
@@ -87,5 +100,5 @@ class DetailView extends React.Component<any, any> {
 
 export const Detail ={
     path: 'Detail/:id',
-    component: DetailView
+    component: {body:DetailView}
 };

@@ -1,10 +1,10 @@
 import { ActionCreatorGeneric } from 'redux-typed';
 import * as Shop from './shop';
-//import * as User from './user';
+import * as User from './user';
 
 // The top-level state object
 export interface ApplicationState {
-    //User: User.UserState,
+    users: User.UsersState,
     shops: Shop.ShopsState
 }
 
