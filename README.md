@@ -52,3 +52,9 @@ export 因为牵涉到interface,对象必须有类型,否则会报错
 import * as User from "./User";
 export { User };
 使用这个方式是为了统一models中的Interface和Schema,使之可以循环
+
+
+redux-typed的一个大坑,几乎崩溃到放弃的坑
+ApplicationState和reducers里的变量名一定要一致,在provide中的state类型是ApplicationState,获取到的变量名是reducers的,因此获取不到对象而报错
+browser.js:40Uncaught Invariant Violation: `mapStateToProps` must return an object. Instead received undefined.
+这个错误就是state没有获取正确,极难排查

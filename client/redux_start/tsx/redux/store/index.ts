@@ -12,8 +12,8 @@ export interface ApplicationState {
 // the reducer with the matching name. It's important that the names match exactly, and that the reducer
 // acts on the corresponding ApplicationState property type.
 export const reducers = {
-    //User: User.reducer,
-    shop: Shop.reducer
+    users: User.reducer,
+    shops: Shop.reducer
 };
 
 // This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are
