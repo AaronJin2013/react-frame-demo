@@ -28,6 +28,7 @@ export module UsersController {
                 data:user
             });
         });
+
     }
     export function itemAction(req, res, next) {
         //User.findById(req.params.id, function(err, user) {

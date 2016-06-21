@@ -6,6 +6,7 @@
 /// <reference path="main/ambient/mime/index.d.ts" />
 /// <reference path="main/ambient/node/index.d.ts" />
 /// <reference path="main/ambient/react-addons-css-transition-group/index.d.ts" />
+/// <reference path="main/ambient/react-addons-linked-state-mixin/index.d.ts" />
 /// <reference path="main/ambient/react-addons-transition-group/index.d.ts" />
 /// <reference path="main/ambient/react-dom/index.d.ts" />
 /// <reference path="main/ambient/react-redux/index.d.ts" />

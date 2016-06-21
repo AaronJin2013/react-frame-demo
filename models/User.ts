@@ -11,3 +11,10 @@ export const Schema = {
     mobile: String,
     name: String,
 };
+
+export const Model = {
+    UUID: '',
+    department: '',
+    mobile: '',
+    name: '',
+};

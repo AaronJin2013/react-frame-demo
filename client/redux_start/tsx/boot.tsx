@@ -10,7 +10,7 @@ import * as Routes from './routes';
 
 const history = syncHistoryWithStore(hashHistory, Store);
 //html5 mode
-//const history = syncHistoryWithStore(browserHistory, store);
+//const history = syncHistoryWithStore(browserHistory, Store);
 
 export class Boot extends React.Component<any, any> {
     render() {

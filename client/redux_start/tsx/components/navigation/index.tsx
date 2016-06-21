@@ -11,8 +11,8 @@ export class Navigation extends React.Component<any, any> {
                 <header>
                     <ul>
                         <li><IndexLink  to="/" activeClassName="active" activeStyle={{color: '#c00'}}>home</IndexLink></li>
-                        <li><Link to="/user" activeClassName="active" activeStyle={{color: '#c00'}}>user</Link></li>
-                        <li><Link to="/shop" activeClassName="active" activeStyle={{color: '#c00'}}>shop</Link></li>
+                        <li><Link to="/user" activeClassName="active" activeStyle={{color: '#c00'}}>user(数据调用)</Link></li>
+                        <li><Link to="/shop" activeClassName="active" activeStyle={{color: '#c00'}}>shop(延迟加载)</Link></li>
                     </ul>
                 </header>
                 {this.props.children}

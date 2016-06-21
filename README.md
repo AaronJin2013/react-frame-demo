@@ -55,6 +55,29 @@ export { User };
 
 
 redux-typed的一个大坑,几乎崩溃到放弃的坑
-ApplicationState和reducers里的变量名一定要一致,在provide中的state类型是ApplicationState,获取到的变量名是reducers的,因此获取不到对象而报错
+ApplicationState和reducers里的变量名最好一致,在provide中的state类型是ApplicationState,获取到的变量名是reducers的,因此获取不到对象而报错
 browser.js:40Uncaught Invariant Violation: `mapStateToProps` must return an object. Instead received undefined.
 这个错误就是state没有获取正确,极难排查
+
+redux-router
+路由为逐级匹配,因此固定项要写在前面,否则会先匹配到变量而出错
+{path: 'user/add', component: UserAdd},
+{path: 'user/:id', component: User},
+
+
+react升级到15.X之后<base href="/">就不需要再加了,否则会出现错误提示,可能是弃用了,实用无影响,做个记录
+
+
+前端和后端通讯json或string需要通过headers设置
+ headers: {
+                'Content-Type': 'application/json'
+            }
+application/json可以传递json
+x-www-form-urlencoded可以传递字符串
+不可串用,否则后端获取不到数据
+后端需要添加
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+ [react-router] `props.history` and `context.history` are deprecated. Please use `context.router`.
+ 是chrome的dev tools错误,可以忽略.

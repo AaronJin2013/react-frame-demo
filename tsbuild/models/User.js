@@ -5,3 +5,9 @@ exports.Schema = {
     mobile: String,
     name: String,
 };
+exports.Model = {
+    UUID: '',
+    department: '',
+    mobile: '',
+    name: '',
+};

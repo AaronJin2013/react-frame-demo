@@ -11,7 +11,6 @@ export class View extends React.Component<any, any> {
             .then(function(response) {
                 //console.log(response.headers.get('Content-Type'))
                 //console.log(response.headers.get('Date'))
-                console.log(response.status)
                 //console.log(response.statusText)
             });
 

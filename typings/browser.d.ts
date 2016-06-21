@@ -5,6 +5,7 @@
 /// <reference path="browser/ambient/mime/index.d.ts" />
 /// <reference path="browser/ambient/node/index.d.ts" />
 /// <reference path="browser/ambient/react-addons-css-transition-group/index.d.ts" />
+/// <reference path="browser/ambient/react-addons-linked-state-mixin/index.d.ts" />
 /// <reference path="browser/ambient/react-addons-transition-group/index.d.ts" />
 /// <reference path="browser/ambient/react-dom/index.d.ts" />
 /// <reference path="browser/ambient/react-redux/index.d.ts" />
